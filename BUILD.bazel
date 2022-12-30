@@ -1,0 +1,10 @@
+filegroup(
+    name = "test_data",
+    data = glob(["interesting_files/**"]),
+)
+
+sh_test(
+    name = "my_test",
+    srcs = ["my_test.sh"],
+    data = [":test_data"],
+)
